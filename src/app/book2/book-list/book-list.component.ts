@@ -30,5 +30,5 @@ export class BookListComponent implements OnInit {
     this.currentBook = book;
   }
 
-
+// ng g c book2/book-list   
 }
