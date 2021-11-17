@@ -11,6 +11,7 @@ import { BookDetailsComponent } from './book2/book-details/book-details.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SampleFormComponent } from './book2/sample-form/sample-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BookFormComponent } from './book2/book-form/book-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     BookListComponent,
     BookRowComponent,
     BookDetailsComponent,
-    SampleFormComponent
+    SampleFormComponent,
+    BookFormComponent
   ],
   imports: [
     BrowserModule,
