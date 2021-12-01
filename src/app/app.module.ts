@@ -12,6 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SampleFormComponent } from './book2/sample-form/sample-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookFormComponent } from './book2/book-form/book-form.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { BookFormComponent } from './book2/book-form/book-form.component';
     BookRowComponent,
     BookDetailsComponent,
     SampleFormComponent,
-    BookFormComponent
+    BookFormComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
