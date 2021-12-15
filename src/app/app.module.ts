@@ -10,12 +10,13 @@ import { BookRowComponent } from './book2/book-row/book-row.component';
 import { BookDetailsComponent } from './book2/book-details/book-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SampleFormComponent } from './book2/sample-form/sample-form.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BookFormComponent } from './book2/book-form/book-form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
+import { jwtInterceptorService } from './helper/jwtinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { UserComponent } from './user/user.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,9 @@ import { UserComponent } from './user/user.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: jwtInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

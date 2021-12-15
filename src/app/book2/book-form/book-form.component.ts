@@ -38,7 +38,6 @@ export class BookFormComponent implements OnInit {
 
   closeForm() {
     this.bookFormClose.emit(undefined)
-
   }
 
 

@@ -8,7 +8,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {  
-  private apiURI: string = 'http://localhost:3000';
+  private apiURI: string = 'https://localhost:8080';
   private userSubject: BehaviorSubject<User|null>;
   public user: Observable<User|null>;
 
@@ -42,7 +42,8 @@ export class UserService {
 
   public login(email: string, password: string): Observable<any> {
 
-    return this.http.post<any>(`${this.apiURI}/auth`, { email: email, password: password }).
+    return this.http.post<any>(`${this.apiURI}/auth`, { email: email, password: password, },
+    {withCredentials:true}).
     pipe(map(user => {
      localStorage.setItem('currentUser', JSON.stringify(user))
      this.userSubject.next(user);
@@ -57,6 +58,8 @@ export class UserService {
     localStorage.removeItem('currentUser');
     this.userSubject.next(null);
 }
+
+
 
 
 
